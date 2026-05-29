@@ -10,31 +10,32 @@ import {
 } from "recharts";
 
 const data = [
-  { skill: "Python", jobs: 400 },
-  { skill: "React", jobs: 300 },
-  { skill: "SQL", jobs: 280 },
-  { skill: "AWS", jobs: 200 },
-  { skill: "Docker", jobs: 180 },
+  { skill: "Python", demand: 95 },
+  { skill: "SQL", demand: 88 },
+  { skill: "React", demand: 80 },
+  { skill: "AWS", demand: 76 },
+  { skill: "Docker", demand: 65 },
 ];
 
 export default function SkillsChart() {
   return (
-    <div className="bg-zinc-900 p-6 rounded-2xl border border-gray-800 mt-8">
-      <h2 className="text-white text-xl font-semibold mb-6">
-        Top Skills Demand
-      </h2>
+    <section className="px-8 py-16">
+      <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-8">
+        <h2 className="text-3xl font-bold text-white mb-8">
+          Top In-Demand Skills
+        </h2>
 
-      <div className="w-full h-80">
-        <ResponsiveContainer width="100%" height="100%">
-          <BarChart data={data}>
-            <XAxis dataKey="skill" />
-            <YAxis />
-            <Tooltip />
-
-            <Bar dataKey="jobs" radius={[10, 10, 0, 0]} />
-          </BarChart>
-        </ResponsiveContainer>
+        <div className="h-[400px]">
+          <ResponsiveContainer width="100%" height="100%">
+            <BarChart data={data}>
+              <XAxis dataKey="skill" />
+              <YAxis />
+              <Tooltip />
+              <Bar dataKey="demand" radius={[10, 10, 0, 0]} />
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
       </div>
-    </div>
+    </section>
   );
 }
