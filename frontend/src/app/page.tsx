@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import StatsCards from "@/components/StatsCards";
 import SkillsChart from "@/components/SkillsChart";
 import RecentJobs from "@/components/RecentJobs";
+import JobsList from "@/components/JobsList";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
         <StatsCards />
         <SkillsChart />
         <RecentJobs />
+        <JobsList />
       </div>
     </main>
   );
