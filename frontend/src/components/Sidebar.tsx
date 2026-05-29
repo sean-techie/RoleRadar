@@ -1,27 +1,31 @@
 export default function Sidebar() {
   return (
-    <aside className="w-64 bg-zinc-950 border-r border-gray-800 min-h-screen p-6">
-      <h2 className="text-white text-xl font-semibold mb-8">
-        Analytics
-      </h2>
+    <aside className="w-64 min-h-screen bg-zinc-950 border-r border-zinc-800 p-6 hidden lg:block">
+      <h1 className="text-3xl font-bold text-white mb-12">
+        RoleRadar
+      </h1>
 
-      <div className="flex flex-col gap-4 text-gray-400">
-        <button className="text-left hover:text-white">
-          Overview
-        </button>
+      <nav className="flex flex-col gap-6 text-gray-400">
+        <a href="#" className="hover:text-white transition">
+          Dashboard
+        </a>
 
-        <button className="text-left hover:text-white">
-          Top Skills
-        </button>
+        <a href="#" className="hover:text-white transition">
+          Skills
+        </a>
 
-        <button className="text-left hover:text-white">
-          Locations
-        </button>
+        <a href="#" className="hover:text-white transition">
+          Trends
+        </a>
 
-        <button className="text-left hover:text-white">
-          Salaries
-        </button>
-      </div>
+        <a href="#" className="hover:text-white transition">
+          Jobs
+        </a>
+
+        <a href="#" className="hover:text-white transition">
+          Analytics
+        </a>
+      </nav>
     </aside>
   );
 }
