@@ -1,8 +1,11 @@
 export async function fetchJobs() {
   try {
-    const response = await fetch("http://127.0.0.1:8000/jobs", {
-      cache: "no-store",
-    });
+    const response = await fetch(
+      "https://roleradar-backend.onrender.com/jobs",
+      {
+        cache: "no-store",
+      }
+    );
 
     if (!response.ok) {
       throw new Error("Failed to fetch jobs");
@@ -17,9 +20,12 @@ export async function fetchJobs() {
 
 export async function fetchSkills() {
   try {
-    const response = await fetch("http://127.0.0.1:8000/skills", {
-      cache: "no-store",
-    });
+    const response = await fetch(
+      "https://roleradar-backend.onrender.com/skills",
+      {
+        cache: "no-store",
+      }
+    );
 
     if (!response.ok) {
       throw new Error("Failed to fetch skills");
