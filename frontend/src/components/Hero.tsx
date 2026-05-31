@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Hero() {
   return (
     <section className="flex flex-col items-center justify-center text-center py-32 px-6">
@@ -11,9 +13,11 @@ export default function Hero() {
         job market analytics.
       </p>
 
-      <button className="mt-10 bg-white text-black px-8 py-4 rounded-xl font-semibold hover:opacity-80 transition">
-        Explore Dashboard
-      </button>
+      <Link href="/analytics">
+        <button className="mt-10 bg-white text-black px-8 py-4 rounded-xl font-semibold hover:opacity-80 transition">
+          Explore Dashboard
+        </button>
+      </Link>
     </section>
   );
 }
