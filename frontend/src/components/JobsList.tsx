@@ -11,6 +11,7 @@ interface Job {
 
 export default function JobsList() {
   const [jobs, setJobs] = useState<Job[]>([]);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
   useEffect(() => {
@@ -20,6 +21,8 @@ export default function JobsList() {
         setJobs(data);
       } catch (err) {
         setError("Backend API not running");
+      } finally {
+        setLoading(false);
       }
     }
 
@@ -32,6 +35,12 @@ export default function JobsList() {
         <h2 className="text-3xl font-bold text-white mb-8">
           Live Jobs API
         </h2>
+
+        {loading && (
+          <p className="text-gray-400 mb-4">
+            Loading jobs...
+          </p>
+        )}
 
         {error && (
           <p className="text-red-500 mb-4">

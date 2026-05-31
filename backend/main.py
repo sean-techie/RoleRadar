@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+import pandas as pd
 
 app = FastAPI()
 
@@ -40,3 +41,16 @@ def jobs():
             "location": "Remote"
         }
     ]
+
+@app.get("/skills")
+def skills():
+    df = pd.read_csv("../data/processed/jobs_with_skills.csv")
+
+    skills_count = {}
+
+    for skills in df["extracted_skills"]:
+        for skill in skills.split(", "):
+            if skill:
+                skills_count[skill] = skills_count.get(skill, 0) + 1
+
+    return skills_count
