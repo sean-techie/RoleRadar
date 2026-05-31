@@ -1,0 +1,5 @@
+role,company,location,description,skills,extracted_skills
+Frontend Developer,Google,Remote,React JavaScript TypeScript Tailwind,React JavaScript TypeScript Tailwind,"React, Tailwind, TypeScript, JavaScript"
+Data Engineer,Microsoft,Cape Town,Python SQL Airflow AWS ETL,Python SQL Airflow AWS ETL,"Python, SQL, AWS, Airflow, ETL"
+AI Engineer,OpenAI,Remote,Python NLP Machine Learning PyTorch,Python NLP Machine Learning PyTorch,"Python, Machine Learning, NLP, PyTorch"
+Backend Developer,Amazon,Johannesburg,FastAPI PostgreSQL Docker APIs,FastAPI PostgreSQL Docker APIs,"SQL, Docker, FastAPI, PostgreSQL"
