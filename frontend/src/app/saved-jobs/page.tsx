@@ -20,6 +20,19 @@ export default function SavedJobsPage() {
     setSavedJobs(jobs);
   }, []);
 
+  function removeJob(indexToRemove: number) {
+    const updatedJobs = savedJobs.filter(
+      (_, index) => index !== indexToRemove
+    );
+
+    setSavedJobs(updatedJobs);
+
+    localStorage.setItem(
+      "savedJobs",
+      JSON.stringify(updatedJobs)
+    );
+  }
+
   return (
     <main className="min-h-screen bg-black text-white p-10">
       <h1 className="text-5xl font-bold mb-10">
@@ -49,15 +62,24 @@ export default function SavedJobsPage() {
                 {job.location}
               </p>
 
-              <a
-                href={job.apply_link}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <button className="mt-6 bg-white text-black px-6 py-3 rounded-xl font-semibold hover:opacity-80 transition">
-                  Apply
+              <div className="flex gap-4 mt-6">
+                <a
+                  href={job.apply_link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <button className="bg-white text-black px-6 py-3 rounded-xl font-semibold hover:opacity-80 transition">
+                    Apply
+                  </button>
+                </a>
+
+                <button
+                  onClick={() => removeJob(index)}
+                  className="border border-red-500 text-red-500 px-6 py-3 rounded-xl font-semibold hover:bg-red-500 hover:text-white transition"
+                >
+                  Remove
                 </button>
-              </a>
+              </div>
             </div>
           ))}
         </div>
