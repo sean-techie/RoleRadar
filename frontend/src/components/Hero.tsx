@@ -13,7 +13,7 @@ export default function Hero() {
         job market analytics.
       </p>
 
-      <Link href="/analytics">
+      <Link href="/jobs">
         <button className="mt-10 bg-white text-black px-8 py-4 rounded-xl font-semibold hover:opacity-80 transition">
           Explore Dashboard
         </button>
