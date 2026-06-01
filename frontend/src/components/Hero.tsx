@@ -15,7 +15,13 @@ export default function Hero() {
 
       <Link href="/jobs">
         <button className="mt-10 bg-white text-black px-8 py-4 rounded-xl font-semibold hover:opacity-80 transition">
-          Explore Dashboard
+          Explore Jobs
+        </button>
+      </Link>
+
+      <Link href="/saved-jobs">
+        <button className="mt-4 border border-white px-8 py-4 rounded-xl font-semibold hover:bg-white hover:text-black transition">
+          View Saved Jobs
         </button>
       </Link>
     </section>
