@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { fetchJobs } from "@/services/api";
 
 interface Job {
@@ -42,22 +43,21 @@ export default function JobsPage() {
 
       <div className="space-y-6">
         {filteredJobs.map((job, index) => (
-          <div
-            key={index}
-            className="bg-zinc-900 border border-zinc-800 p-6 rounded-2xl"
-          >
-            <h2 className="text-2xl font-semibold">
-              {job.role}
-            </h2>
+          <Link href={`/jobs/${index}`} key={index}>
+            <div className="bg-zinc-900 border border-zinc-800 p-6 rounded-2xl hover:border-white transition cursor-pointer">
+              <h2 className="text-2xl font-semibold">
+                {job.role}
+              </h2>
 
-            <p className="text-gray-400 mt-2">
-              {job.company}
-            </p>
+              <p className="text-gray-400 mt-2">
+                {job.company}
+              </p>
 
-            <p className="text-gray-500 mt-1">
-              {job.location}
-            </p>
-          </div>
+              <p className="text-gray-500 mt-1">
+                {job.location}
+              </p>
+            </div>
+          </Link>
         ))}
       </div>
     </main>
